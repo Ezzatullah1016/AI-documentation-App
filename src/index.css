@@ -1,0 +1,213 @@
+:root {
+  --bg: #f6f4ef;
+  --surface: #fffdf8;
+  --surface-muted: #f0ebe3;
+  --text: #1f1b16;
+  --text-muted: #5c5348;
+  --accent: #3d4f3f;
+  --accent-soft: #e8ede7;
+  --border: #e2d9cd;
+  --shadow: 0 10px 40px rgba(31, 27, 22, 0.08);
+  --shadow-soft: 0 4px 20px rgba(31, 27, 22, 0.06);
+  --radius: 14px;
+  --radius-sm: 10px;
+  --font-serif: "Source Serif 4", "Crimson Pro", ui-serif, Georgia, serif;
+  --font-ui: "Crimson Pro", "Source Serif 4", ui-serif, Georgia, serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-ui);
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--text);
+  background: radial-gradient(1200px 800px at 20% 10%, #faf7f1, var(--bg));
+}
+
+#root {
+  min-height: 100vh;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+button,
+input,
+textarea {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.panel {
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(226, 217, 205, 0.85);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-size: 0.95rem;
+  transition: background 0.15s ease, box-shadow 0.15s ease, transform 0.05s ease;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #f8faf7;
+  box-shadow: var(--shadow-soft);
+}
+
+.btn-primary:hover {
+  filter: brightness(1.05);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text);
+  border-color: var(--border);
+}
+
+.btn-ghost:hover {
+  background: var(--surface-muted);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.field label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.field input,
+.field textarea {
+  padding: 0.6rem 0.85rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: #fffefb;
+  color: var(--text);
+  box-shadow: inset 0 1px 2px rgba(31, 27, 22, 0.04);
+}
+
+.field input:focus,
+.field textarea:focus {
+  outline: 2px solid rgba(61, 79, 63, 0.25);
+  outline-offset: 1px;
+}
+
+.tiptap-editor {
+  min-height: 60vh;
+  padding: 2rem 2.25rem 3rem;
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  line-height: 1.75;
+}
+
+.tiptap-editor:focus-visible {
+  outline: none;
+}
+
+.tiptap-editor p {
+  margin: 0 0 0.85em;
+}
+
+.tiptap-editor h2 {
+  font-size: 1.65rem;
+  margin: 1.4em 0 0.5em;
+}
+
+.tiptap-editor h3 {
+  font-size: 1.35rem;
+  margin: 1.2em 0 0.45em;
+}
+
+.tiptap-editor ul {
+  margin: 0 0 0.85em 1.2em;
+  padding: 0;
+}
+
+.tiptap-editor blockquote {
+  margin: 0 0 0.85em;
+  padding-left: 1rem;
+  border-left: 3px solid var(--border);
+  color: var(--text-muted);
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  padding: 0.5rem 0.65rem;
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(to bottom, #fffefb, #fbf8f2);
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+
+.toolbar button {
+  border: 1px solid transparent;
+  background: transparent;
+  padding: 0.35rem 0.55rem;
+  border-radius: 8px;
+  color: var(--text);
+  font-size: 0.85rem;
+}
+
+.toolbar button:hover {
+  background: var(--surface-muted);
+}
+
+.toolbar button.is-active {
+  background: var(--accent-soft);
+  border-color: rgba(61, 79, 63, 0.2);
+}
+
+kbd {
+  font-size: 0.75em;
+  border: 1px solid var(--border);
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+  background: var(--surface-muted);
+}
